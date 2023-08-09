@@ -1,0 +1,38 @@
+using System;
+
+namespace HelloWorld 
+{
+    public interface IConsole
+    {
+        void WriteLine(string message);
+    }
+
+    public class ConsoleWrapper : IConsole
+    {
+        public void WriteLine(string message)
+        {
+            Console.WriteLine(message);
+        }
+    }
+
+    public class Program
+    {
+        private IConsole _console;
+
+        public Program(IConsole console)
+        {
+            _console = console;
+        }
+
+        public void Run()
+        {
+            _console.WriteLine("Hello, World!");
+        }
+
+        static void Main(string[] args)
+        {
+            var program = new Program(new ConsoleWrapper());
+            program.Run();
+        }
+    }
+}
