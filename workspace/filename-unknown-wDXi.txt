@@ -1,0 +1,19 @@
+using Moq;
+using NUnit.Framework;
+
+namespace HelloWorld.Tests
+{
+    public class ProgramTests
+    {
+        [Test]
+        public void Hello_World_Is_Written_To_Console()
+        {
+            var consoleMock = new Mock<IConsole>();
+            var program = new Program(consoleMock.Object);
+
+            program.Run();
+
+            consoleMock.Verify(c => c.WriteLine("Hello, World!"), Times.Once);
+        }
+    }
+}
