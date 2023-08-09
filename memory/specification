@@ -1,0 +1,28 @@
+You can create a simple console application in C# to display "Hello, World!" with the following steps:
+
+1. Create a new project in your IDE (Visual Studio, for example). Select `Console App (.NET Core)` or `Console App (.NET Framework)` template, according to your needs.
+
+2. You should now have a Program.cs file open, with some basic code already inserted. The main function is the function that will be called when your application is launched.
+
+Here is a minimal `Hello, World!` program in C#:
+
+```csharp
+using System;
+
+namespace HelloWorld
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello, World!");
+        }
+    }
+}
+```
+
+You can replace the existing code in the `Main` function with the line `Console.WriteLine("Hello, World!");`. This line of code will print the string "Hello, World!" to the console.
+
+3. Run your console application either by clicking the `Start Debugging` button in your IDE or by using the Command-Line Interface to navigate to the directory containing your project and then executing the `dotnet run` command.
+
+The console should then display "Hello, World!".
